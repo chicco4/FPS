@@ -152,12 +152,11 @@ func remove_exclusion(projectile_rid):
 
 
 func _on_pickup_detection_body_entered(body):
-	var weapon_in_list = weapon_list.find(body.weapon_resource, 0)
 	
-	if weapon_in_list == -1: #pick up
+	if !weapon_list.has(body.weapon_resource): #pick up
 		weapon_list.push_back(body.weapon_resource)
-		emit_signal("update_weapon_list", weapon_list)
 		weapon_index = weapon_list.size() - 1
+		emit_signal("update_weapon_list", weapon_list)
 		change_weapon()
 		
 		body.queue_free()
