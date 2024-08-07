@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://qb0i3vq3huen"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://qb0i3vq3huen"]
 
+[ext_resource type="PackedScene" uid="uid://c6loc034ex6uk" path="res://scenes/bullet_simple.tscn" id="1_3uepn"]
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_f8ntr"]
 
 [resource]
@@ -16,5 +17,6 @@ magazine_ammo = 12
 auto_fire = false
 weapon_range = 1000
 damage = 5
-type = 1
-projectile_velocity = 0
+type = 2
+projectile_to_load = ExtResource("1_3uepn")
+projectile_velocity = 50

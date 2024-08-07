@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://101aufrw5vw1"]
 
-[ext_resource type="PackedScene" uid="uid://daol8g1ypy4yc" path="res://scenes/bullet.tscn" id="1_lb02m"]
+[ext_resource type="PackedScene" uid="uid://daol8g1ypy4yc" path="res://scenes/bullet_big.tscn" id="1_lb02m"]
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_sufoh"]
 
 [resource]
