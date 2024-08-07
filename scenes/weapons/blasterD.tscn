@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bvrj5vqys305u"]
 
-[ext_resource type="Script" path="res://scripts/weapon_pickup.gd" id="1_cuopi"]
-[ext_resource type="Resource" uid="uid://dtber6y4g44jb" path="res://resources/blasterD.tres" id="2_0s76l"]
+[ext_resource type="Script" path="res://scripts/weapon_pickup.gd" id="1_8lp3t"]
+[ext_resource type="Resource" uid="uid://dtber6y4g44jb" path="res://resources/blasterD.tres" id="2_5kl52"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1t1g"]
 resource_name = "metal"
@@ -153,8 +153,8 @@ points = PackedVector3Array(-0.0300078, -0.175, 0.044953, 0.0299922, -0.175, 0.0
 [node name="BlasterD" type="RigidBody3D"]
 collision_layer = 8
 collision_mask = 13
-script = ExtResource("1_cuopi")
-weapon_resource = ExtResource("2_0s76l")
+script = ExtResource("1_8lp3t")
+weapon_resource = ExtResource("2_5kl52")
 
 [node name="blasterD" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_0sgw3")

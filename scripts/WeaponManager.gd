@@ -152,25 +152,28 @@ func remove_exclusion(projectile_rid):
 
 
 func _on_pickup_detection_body_entered(body):
-	
-	if !weapon_list.has(body.weapon_resource): #pick up
-		weapon_list.push_back(body.weapon_resource)
-		weapon_index = weapon_list.size() - 1
-		emit_signal("update_weapon_list", weapon_list)
-		change_weapon()
-		
-		body.queue_free()
+	if body.pickup_ready:
+		if !weapon_list.has(body.weapon_resource): #pick up
+			weapon_list.push_back(body.weapon_resource)
+			weapon_index = weapon_list.size() - 1
+			emit_signal("update_weapon_list", weapon_list)
+			change_weapon()
+			
+			body.queue_free()
 
 func drop():
-	if weapon_list.size() > 0:
+	if weapon_list.size() > 1:
 		
+		var weapon_scene = load("res://scenes/weapons/" + current_weapon.weapon_name + ".tscn")
+		var weapon_instance = weapon_scene.instantiate()
+		weapon_instance.weapon_resource = current_weapon
+		weapon_instance.set_global_transform(bullet_point.get_global_transform())
 		
+		var world = get_tree().get_root().get_child(0)
+		world.add_child(weapon_instance)
 		
 		weapon_list.pop_at(weapon_index)
-		
 		weapon_index = 0
 		emit_signal("update_weapon_list", weapon_list)
 		change_weapon()
-	
-	
-	
+		
