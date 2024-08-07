@@ -20,7 +20,3 @@ material_override = SubResource("StandardMaterial3D_o4bik")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_lsyje")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01202, 0)
-billboard = 2

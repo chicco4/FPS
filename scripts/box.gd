@@ -7,7 +7,7 @@ var health = 20
 func hit_successful(damage):
 	health -= damage
 	
-	label_3d.set_text(str(health))
+	print(get_name() + " health: " + str(health))
 	
 	if health <= 0:
 		queue_free()
