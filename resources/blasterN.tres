@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://101aufrw5vw1"]
+
+[ext_resource type="PackedScene" uid="uid://daol8g1ypy4yc" path="res://scenes/bullet.tscn" id="1_lb02m"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_sufoh"]
+
+[resource]
+script = ExtResource("1_sufoh")
+weapon_name = "blasterN"
+activate_anim = "blasterN_activate"
+deactivate_anim = "blasterN_deactivate"
+shoot_anim = "blasterN_shoot"
+reload_anim = "blasterN_reload"
+OOA_anim = "blasterN_OOA"
+current_ammo = 10
+reserve_ammo = 10
+magazine_ammo = 10
+auto_fire = false
+weapon_range = 1000
+damage = 5
+type = 2
+projectile_to_load = ExtResource("1_lb02m")
+projectile_velocity = 100

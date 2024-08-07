@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://qb0i3vq3huen"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_f8ntr"]
+
+[resource]
+script = ExtResource("1_f8ntr")
+weapon_name = "blasterK"
+activate_anim = "blasterK_activate"
+deactivate_anim = "blasterK_deactivate"
+shoot_anim = "blasterK_shoot"
+reload_anim = "blasterK_reload"
+OOA_anim = "blasterK_OOA"
+current_ammo = 6
+reserve_ammo = 6
+magazine_ammo = 12
+auto_fire = false
+weapon_range = 1000
+damage = 2
+type = 2
+projectile_velocity = 0

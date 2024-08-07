@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://daev73ru0k3fg"]
+
+[ext_resource type="Script" path="res://scripts/box.gd" id="1_2orin"]
+[ext_resource type="Texture2D" uid="uid://d26ho722u4g3w" path="res://textures/prototype_textures/Orange/texture_09.png" id="1_2pxhi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4bik"]
+albedo_texture = ExtResource("1_2pxhi")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsyje"]
+
+[node name="Box" type="RigidBody3D" groups=["target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_2orin")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_o4bik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lsyje")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01202, 0)
+billboard = 2
