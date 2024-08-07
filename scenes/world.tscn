@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://yc5acurmabxf"]
+[gd_scene load_steps=10 format=3 uid="uid://yc5acurmabxf"]
 
 [ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
 [ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/box.tscn" id="2_pxkcy"]
+[ext_resource type="PackedScene" uid="uid://df3itn26evwry" path="res://scenes/static_target.tscn" id="3_lkle2"]
 [ext_resource type="PackedScene" uid="uid://cg0bfm6nq1jf" path="res://scenes/player.tscn" id="5_k4xow"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hrlc6"]
@@ -26,7 +27,7 @@ albedo_texture = ExtResource("1_0nyue")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0lsi"]
-size = Vector3(100, 1, 100)
+size = Vector3(50, 1, 50)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 0, 1.43051e-06)
@@ -46,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Floor"]
 material_override = SubResource("StandardMaterial3D_d13s1")
 use_collision = true
-size = Vector3(100, 1, 100)
+size = Vector3(50, 1, 50)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor"]
 shape = SubResource("BoxShape3D_p0lsi")
@@ -59,5 +60,25 @@ transform = Transform3D(0.608313, 0.790671, 0.0692405, -0.592267, 0.394126, 0.70
 
 [node name="Box3" parent="Map" instance=ExtResource("2_pxkcy")]
 transform = Transform3D(0.69179, 0.722098, 0, -0.607429, 0.581934, 0.540725, 0.390457, -0.374068, 0.8412, 3.50253, 1.58429, -3.29582)
+
+[node name="StaticTargets" type="Node3D" parent="Map"]
+
+[node name="StaticTarget" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 2.14862, 0)
+
+[node name="StaticTarget2" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 2.14862, 1.21463)
+
+[node name="StaticTarget3" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 3.13783, 1.21463)
+
+[node name="StaticTarget4" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 3.13783, -0.0365486)
+
+[node name="StaticTarget5" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 3.13783, -1.24822)
+
+[node name="StaticTarget6" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 2.06612, -1.24822)
 
 [node name="Player" parent="." instance=ExtResource("5_k4xow")]
