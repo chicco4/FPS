@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvb040wf3tgbr"]
+[gd_scene load_steps=11 format=3 uid="uid://dvb040wf3tgbr"]
 
-[ext_resource type="Script" path="res://scenes/weapons/weapon_pickup.gd" id="1_bmskc"]
+[ext_resource type="Script" path="res://scripts/weapon_pickup.gd" id="1_bmskc"]
+[ext_resource type="Resource" uid="uid://htobx8swnac6" path="res://resources/blasterI.tres" id="2_l8cvv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fr5pc"]
 resource_name = "dark"
@@ -24,7 +25,6 @@ metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_be2l6"]
 resource_name = "_defaultMat"
-albedo_color = Color(1, 1, 1, 1)
 metallic = 1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lsvae"]
@@ -154,6 +154,7 @@ points = PackedVector3Array(-0.030002, -0.16, -0.120013, -0.05, -0.0300078, -0.2
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_bmskc")
+weapon_resource = ExtResource("2_l8cvv")
 
 [node name="blasterI" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_w8tku")

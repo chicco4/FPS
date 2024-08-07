@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://k7guv6ws6yei"]
+[gd_scene load_steps=11 format=3 uid="uid://k7guv6ws6yei"]
 
-[ext_resource type="Script" path="res://scenes/weapons/weapon_pickup.gd" id="1_m63ec"]
+[ext_resource type="Script" path="res://scripts/weapon_pickup.gd" id="1_m63ec"]
+[ext_resource type="Resource" uid="uid://101aufrw5vw1" path="res://resources/blasterN.tres" id="2_8du30"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li0jj"]
 resource_name = "dark"
@@ -153,6 +154,7 @@ points = PackedVector3Array(-0.0100039, -0.15375, -0.155049, -0.040002, 0.006230
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_m63ec")
+weapon_resource = ExtResource("2_8du30")
 
 [node name="blasterN" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_v7l0s")

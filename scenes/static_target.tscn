@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://df3itn26evwry"]
 
-[ext_resource type="Script" path="res://scenes/static_target.gd" id="1_nns72"]
+[ext_resource type="Script" path="res://scripts/static_target.gd" id="1_nns72"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0gc0"]
 resource_name = "metal"

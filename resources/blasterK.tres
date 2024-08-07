@@ -16,5 +16,5 @@ magazine_ammo = 12
 auto_fire = false
 weapon_range = 1000
 damage = 2
-type = 2
+type = 1
 projectile_velocity = 0
