@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://yc5acurmabxf"]
+[gd_scene load_steps=9 format=3 uid="uid://yc5acurmabxf"]
 
 [ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
 [ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/box.tscn" id="2_pxkcy"]
-[ext_resource type="Texture2D" uid="uid://brxaxc3cv7gf5" path="res://textures/prototype_textures/Purple/texture_09.png" id="3_05xlr"]
-[ext_resource type="Texture2D" uid="uid://btwcuaft7g36e" path="res://textures/prototype_textures/Green/texture_09.png" id="4_n7kyx"]
 [ext_resource type="PackedScene" uid="uid://cg0bfm6nq1jf" path="res://scenes/player.tscn" id="5_k4xow"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hrlc6"]
@@ -29,14 +27,6 @@ uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0lsi"]
 size = Vector3(100, 1, 100)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehjdy"]
-albedo_texture = ExtResource("3_05xlr")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byyj8"]
-albedo_texture = ExtResource("4_n7kyx")
-uv1_triplanar = true
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 0, 1.43051e-06)
@@ -69,17 +59,5 @@ transform = Transform3D(0.608313, 0.790671, 0.0692405, -0.592267, 0.394126, 0.70
 
 [node name="Box3" parent="Map" instance=ExtResource("2_pxkcy")]
 transform = Transform3D(0.69179, 0.722098, 0, -0.607429, 0.581934, 0.540725, 0.390457, -0.374068, 0.8412, 3.50253, 1.58429, -3.29582)
-
-[node name="MidBox" type="CSGBox3D" parent="Map"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.5, 1, -6)
-material_override = SubResource("StandardMaterial3D_ehjdy")
-use_collision = true
-size = Vector3(2, 2, 2)
-
-[node name="BigBox" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1.5, -2)
-material_override = SubResource("StandardMaterial3D_byyj8")
-use_collision = true
-size = Vector3(3, 3, 3)
 
 [node name="Player" parent="." instance=ExtResource("5_k4xow")]
