@@ -40,6 +40,9 @@ func _input(event):
 		if(weapon_index - 1 > -1):
 			weapon_index = weapon_index - 1
 			change_weapon()
+	
+	if event.is_action_pressed("weapon_drop"):
+		drop(current_weapon)
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == current_weapon.shoot_anim and current_weapon.auto_fire == true:
@@ -158,3 +161,13 @@ func _on_pickup_detection_body_entered(body):
 		change_weapon()
 		
 		body.queue_free()
+
+func drop(weapon: WeaponResource):
+	if weapon_list.size() > 0:
+		weapon_list.pop_at(weapon_index)
+		weapon_index = 0
+		emit_signal("update_weapon_list", weapon_list)
+		change_weapon()
+	
+	
+	
