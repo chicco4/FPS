@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cg0bfm6nq1jf"]
+[gd_scene load_steps=37 format=3 uid="uid://cg0bfm6nq1jf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_m5de1"]
 [ext_resource type="PackedScene" uid="uid://bhk0gxtj2fpal" path="res://models/guns/blasterN.glb" id="2_yfn1f"]
@@ -1063,7 +1063,11 @@ _data = {
 "blasterN_shoot": SubResource("Animation_73nj8")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb1i8"]
+size = Vector3(2, 1, 2)
+
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_m5de1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1156,7 +1160,16 @@ libraries = {
 [node name="BulletPoint" type="Marker3D" parent="MainCamera/WeaponManager/FPSRig"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
+[node name="PickupDetection" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_kb1i8")
+
 [connection signal="update_ammo" from="MainCamera/WeaponManager" to="CanvasLayer" method="_on_weapon_manager_update_ammo"]
 [connection signal="update_weapon_list" from="MainCamera/WeaponManager" to="CanvasLayer" method="_on_weapon_manager_update_weapon_list"]
 [connection signal="weapon_changed" from="MainCamera/WeaponManager" to="CanvasLayer" method="_on_weapon_manager_weapon_changed"]
 [connection signal="animation_finished" from="MainCamera/WeaponManager/FPSRig/AnimationPlayer" to="MainCamera/WeaponManager" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="PickupDetection" to="MainCamera/WeaponManager" method="_on_pickup_detection_body_entered"]

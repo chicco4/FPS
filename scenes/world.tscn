@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://yc5acurmabxf"]
+[gd_scene load_steps=14 format=3 uid="uid://yc5acurmabxf"]
 
 [ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
 [ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/box.tscn" id="2_pxkcy"]
 [ext_resource type="PackedScene" uid="uid://df3itn26evwry" path="res://scenes/static_target.tscn" id="3_lkle2"]
+[ext_resource type="PackedScene" uid="uid://dvb040wf3tgbr" path="res://scenes/weapons/blaster_i.tscn" id="4_kva5f"]
 [ext_resource type="PackedScene" uid="uid://cg0bfm6nq1jf" path="res://scenes/player.tscn" id="5_k4xow"]
+[ext_resource type="PackedScene" uid="uid://bvrj5vqys305u" path="res://scenes/weapons/blaster_d.tscn" id="5_lfmh8"]
+[ext_resource type="PackedScene" uid="uid://by1f53u7au4rx" path="res://scenes/weapons/blaster_k.tscn" id="6_xdegh"]
+[ext_resource type="PackedScene" uid="uid://k7guv6ws6yei" path="res://scenes/weapons/blaster_n.tscn" id="7_tw26t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hrlc6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -80,5 +84,20 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 3.13783, -1.24822)
 
 [node name="StaticTarget6" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 2.06612, -1.24822)
+
+[node name="Weapons" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.493999, 2)
+
+[node name="BlasterI" parent="Map/Weapons" instance=ExtResource("4_kva5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.196329)
+
+[node name="BlasterD" parent="Map/Weapons" instance=ExtResource("5_lfmh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.37247)
+
+[node name="BlasterK" parent="Map/Weapons" instance=ExtResource("6_xdegh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.42212)
+
+[node name="BlasterN" parent="Map/Weapons" instance=ExtResource("7_tw26t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.71588)
 
 [node name="Player" parent="." instance=ExtResource("5_k4xow")]

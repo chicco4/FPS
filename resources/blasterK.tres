@@ -15,6 +15,6 @@ reserve_ammo = 6
 magazine_ammo = 12
 auto_fire = false
 weapon_range = 1000
-damage = 2
+damage = 5
 type = 1
 projectile_velocity = 0

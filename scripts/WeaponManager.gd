@@ -128,9 +128,9 @@ func hitscan_collision(collision_point):
 		
 		hit_scan_damage(bullet_collision.collider, bullet_direction, bullet_collision.position)
 
-func hit_scan_damage(collider, direction, position):
+func hit_scan_damage(collider, direction, _position):
 	if collider.is_in_group("target") and collider.has_method("hit_successful"):
-		collider.hit_successful(current_weapon.damage, direction, position)
+		collider.hit_successful(current_weapon.damage, direction, _position)
 
 func launch_projectile(point: Vector3):
 	var direction = (point - bullet_point.get_global_transform().origin).normalized()
@@ -146,3 +146,11 @@ func launch_projectile(point: Vector3):
 	
 func remove_exclusion(projectile_rid):
 	collision_exclusion.erase(projectile_rid)
+
+
+func _on_pickup_detection_body_entered(body):
+	print(body.weapon_resource.weapon_name)
+	var weapon_in_list = weapon_list.find(body.weapon_resource, 0)
+	
+	if weapon_in_list == -1: #pick up
+		weapon_list.push_back(body.weapon_resource)
