@@ -153,13 +153,19 @@ func remove_exclusion(projectile_rid):
 
 func _on_pickup_detection_body_entered(body):
 	if body.pickup_ready:
-		if !weapon_list.has(body.weapon_resource): #pick up
+		if !weapon_list.has(body.weapon_resource) and body.pickup_type == "weapon": #pick up
 			weapon_list.push_back(body.weapon_resource)
 			weapon_index = weapon_list.size() - 1
 			emit_signal("update_weapon_list", weapon_list)
 			change_weapon()
 			
 			body.queue_free()
+		
+		if body.pickup_type == "ammo":
+			current_weapon.magazine_ammo += 20
+			emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
+			body.queue_free()
+			
 
 func drop():
 	if weapon_list.size() > 1:
