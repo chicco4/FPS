@@ -50,7 +50,7 @@ func _on_animation_player_animation_finished(anim_name):
 			shoot()
 
 func change_weapon():
-	if !animation_player.is_playing():
+	#if !animation_player.is_playing():
 		deactivate()
 		current_weapon = weapon_list[weapon_index]
 		emit_signal("weapon_changed", current_weapon.weapon_name)
@@ -163,6 +163,8 @@ func _on_pickup_detection_body_entered(body):
 
 func drop():
 	if weapon_list.size() > 0:
+		
+		
 		
 		weapon_list.pop_at(weapon_index)
 		
