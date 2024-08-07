@@ -15,6 +15,7 @@ var weapon_index = 0
 enum {NULL, HITSCAN, PROJECTILE}
 
 var bullet_debug = preload("res://scenes/bullet_debug.tscn")
+var collision_exclusion = []
 
 func _ready():
 	current_weapon = weapon_list[weapon_index]
@@ -96,7 +97,6 @@ func reload():
 		else:
 			animation_player.play(current_weapon.OOA_anim)
 
-
 func get_camera_collision() -> Vector3:
 	var camera = get_viewport().get_camera_3d()
 	var vieport = get_viewport().get_size()
@@ -105,6 +105,7 @@ func get_camera_collision() -> Vector3:
 	var ray_end = ray_origin + camera.project_ray_normal(vieport/2) * current_weapon.weapon_range
 	
 	var new_intersection = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+	new_intersection.set_exclude(collision_exclusion)
 	var intersection = get_world_3d().direct_space_state.intersect_ray(new_intersection)
 	
 	if not intersection.is_empty():
@@ -135,6 +136,13 @@ func launch_projectile(point: Vector3):
 	var direction = (point - bullet_point.get_global_transform().origin).normalized()
 	var projectile = current_weapon.projectile_to_load.instantiate()
 	
+	var projectile_rid = projectile.get_rid()
+	collision_exclusion.push_front(projectile_rid)
+	projectile.tree_exited.connect(remove_exclusion.bind(projectile.get_rid()))
+	
 	bullet_point.add_child(projectile)
 	projectile.damage = current_weapon.damage
 	projectile.set_linear_velocity(direction * current_weapon.projectile_velocity)
+	
+func remove_exclusion(projectile_rid):
+	collision_exclusion.erase(projectile_rid)

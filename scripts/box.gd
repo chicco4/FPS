@@ -1,7 +1,5 @@
 extends RigidBody3D
 
-@onready var label_3d = $Label3D
-
 var health = 20
 
 func hit_successful(damage):
