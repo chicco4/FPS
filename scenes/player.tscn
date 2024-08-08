@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cg0bfm6nq1jf"]
+[gd_scene load_steps=46 format=3 uid="uid://cg0bfm6nq1jf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_m5de1"]
 [ext_resource type="PackedScene" uid="uid://bhk0gxtj2fpal" path="res://models/guns/blasterN.glb" id="2_yfn1f"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cl30wottdebg" path="res://models/guns/blasterF.glb" id="5_m88sa"]
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="10_21lag"]
 [ext_resource type="PackedScene" uid="uid://bn8krpx4247tb" path="res://models/guns/blasterK.glb" id="11_v2j63"]
+[ext_resource type="AnimationLibrary" uid="uid://bcgaxwhtaqmof" path="res://animations/blasterD.res" id="12_7gwx6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nh3lq"]
 
@@ -183,6 +184,42 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [75.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("blasterF:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.7, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("blasterF:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("blasterF:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_4mk06"]
@@ -1389,6 +1426,46 @@ tracks/2/keys = {
 "values": [true, true]
 }
 
+[sub_resource type="Animation" id="Animation_j72qt"]
+resource_name = "blasterF_activation"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterF:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.7, 0), Vector3(-0.864817, -0.7, 0.936628)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterF:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.22173, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterF:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1t3h"]
 _data = {
 "RESET": SubResource("Animation_b6ewp"),
@@ -1400,6 +1477,7 @@ _data = {
 "blasterD_deaim": SubResource("Animation_qohot"),
 "blasterD_reload": SubResource("Animation_lq7tq"),
 "blasterD_shoot": SubResource("Animation_s74hu"),
+"blasterF_activation": SubResource("Animation_j72qt"),
 "blasterI_OOA": SubResource("Animation_gbc1r"),
 "blasterI_activate": SubResource("Animation_p66gr"),
 "blasterI_aim": SubResource("Animation_bdw8q"),
@@ -1515,7 +1593,8 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainCamera/WeaponManager/FPSRig"]
 libraries = {
-"": SubResource("AnimationLibrary_a1t3h")
+"": SubResource("AnimationLibrary_a1t3h"),
+"blasterD": ExtResource("12_7gwx6")
 }
 
 [node name="BulletPoint" type="Marker3D" parent="MainCamera/WeaponManager/FPSRig"]
