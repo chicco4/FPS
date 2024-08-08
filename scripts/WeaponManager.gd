@@ -76,6 +76,32 @@ func activate():
 func deactivate():
 		animation_player.queue(current_weapon.deactivate_anim)
 
+func aim():
+	animation_player.queue(current_weapon.aim_anim)
+
+func deaim():
+	animation_player.queue(current_weapon.deaim_anim)
+
+func reload():
+	if is_aiming == false:		
+		if !animation_player.is_playing():
+			if current_weapon.magazine_ammo > 0 and (current_weapon.reserve_ammo - current_weapon.current_ammo) > 0:
+				
+				if current_weapon.magazine_ammo >= (current_weapon.reserve_ammo - current_weapon.current_ammo):
+					current_weapon.magazine_ammo -= (current_weapon.reserve_ammo - current_weapon.current_ammo)
+					current_weapon.current_ammo += (current_weapon.reserve_ammo - current_weapon.current_ammo)
+				else:
+					current_weapon.current_ammo += current_weapon.magazine_ammo
+					current_weapon.magazine_ammo = 0
+				
+				emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
+				animation_player.play(current_weapon.reload_anim)
+			
+			else:
+				animation_player.play(current_weapon.OOA_anim)
+
+#region shooting logic
+
 func shoot():
 	if !animation_player.is_playing():
 		if current_weapon.current_ammo > 0:
@@ -101,26 +127,9 @@ func shoot():
 				PROJECTILE:
 					launch_projectile(camera_collision)
 				
-		#else:
+		else:
+			animation_player.play(current_weapon.OOA_anim)
 			#reload()
-
-func reload():
-	if is_aiming == false:		
-		if !animation_player.is_playing():
-			if current_weapon.magazine_ammo > 0 and (current_weapon.reserve_ammo - current_weapon.current_ammo) > 0:
-				
-				if current_weapon.magazine_ammo >= (current_weapon.reserve_ammo - current_weapon.current_ammo):
-					current_weapon.magazine_ammo -= (current_weapon.reserve_ammo - current_weapon.current_ammo)
-					current_weapon.current_ammo += (current_weapon.reserve_ammo - current_weapon.current_ammo)
-				else:
-					current_weapon.current_ammo += current_weapon.magazine_ammo
-					current_weapon.magazine_ammo = 0
-				
-				emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
-				animation_player.play(current_weapon.reload_anim)
-			
-			else:
-				animation_player.play(current_weapon.OOA_anim)
 
 func get_camera_collision() -> Vector3:
 	var camera = get_viewport().get_camera_3d()
@@ -172,6 +181,9 @@ func launch_projectile(point: Vector3):
 func remove_exclusion(projectile_rid):
 	collision_exclusion.erase(projectile_rid)
 
+#endregion
+
+#region pick and drop logic
 
 func _on_pickup_detection_body_entered(body):
 	if body.pickup_ready:
@@ -205,8 +217,4 @@ func drop():
 		emit_signal("update_weapon_list", weapon_list)
 		change_weapon()
 
-func aim():
-	animation_player.queue(current_weapon.aim_anim)
-
-func deaim():
-	animation_player.queue(current_weapon.deaim_anim)
+#endregion
