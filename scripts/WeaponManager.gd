@@ -31,8 +31,6 @@ func _input(event):
 		shoot()
 	
 	if event.is_action_pressed("reload"):
-		if is_aiming == true:
-			deaim()
 		reload()
 	
 	if event.is_action_pressed("weapon_right"):
@@ -96,10 +94,12 @@ func shoot():
 				PROJECTILE:
 					launch_projectile(camera_collision)
 				
-		else:
-			reload()
+		#else:
+			#reload()
 
 func reload():
+	if is_aiming == true:
+		deaim()
 	if !animation_player.is_playing():
 		if current_weapon.magazine_ammo > 0 and (current_weapon.reserve_ammo - current_weapon.current_ammo) > 0:
 			
