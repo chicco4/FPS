@@ -4,6 +4,8 @@
 - inheritence for targets and pickups
 - moving targets
 
+- add aiming animation and logic (maybe manipolating camera fov)
+
 - adding shotgun (maybe using blasterK)
 	- shotgun animation
 	- shoutgun logic!!

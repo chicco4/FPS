@@ -9,6 +9,10 @@ class_name WeaponResource
 @export var reload_anim: String
 @export var OOA_anim: String
 
+@export var aim_anim: String
+@export var deaim_anim: String
+@export var aimshoot_anim: String
+
 @export var current_ammo: int
 @export var reserve_ammo: int
 @export var magazine_ammo: int

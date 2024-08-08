@@ -17,6 +17,8 @@ enum {NULL, HITSCAN, PROJECTILE}
 var bullet_debug = preload("res://scenes/bullet_debug.tscn")
 var collision_exclusion = []
 
+var is_aiming = false
+
 func _ready():
 	current_weapon = weapon_list[weapon_index]
 	emit_signal("weapon_changed", current_weapon.weapon_name)
@@ -29,6 +31,8 @@ func _input(event):
 		shoot()
 	
 	if event.is_action_pressed("reload"):
+		if is_aiming == true:
+			deaim()
 		reload()
 	
 	if event.is_action_pressed("weapon_right"):
@@ -43,9 +47,17 @@ func _input(event):
 	
 	if event.is_action_pressed("weapon_drop"):
 		drop()
+	
+	if event.is_action_pressed("aim"):
+		aim()
+		is_aiming = true
+	
+	if event.is_action_released("aim"):
+		deaim()
+		is_aiming = false
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == current_weapon.shoot_anim and current_weapon.auto_fire == true:
+	if (anim_name == current_weapon.shoot_anim or anim_name == current_weapon.aimshoot_anim) and current_weapon.auto_fire == true:
 		if Input.is_action_pressed("shoot"):
 			shoot()
 
@@ -69,7 +81,11 @@ func shoot():
 			current_weapon.current_ammo = current_weapon.current_ammo - 1
 			
 			emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
-			animation_player.play(current_weapon.shoot_anim)
+			
+			if is_aiming:
+				animation_player.play(current_weapon.aimshoot_anim)
+			else:
+				animation_player.play(current_weapon.shoot_anim)
 			
 			var camera_collision = get_camera_collision()
 			match current_weapon.type:
@@ -182,4 +198,9 @@ func drop():
 		weapon_index = 0
 		emit_signal("update_weapon_list", weapon_list)
 		change_weapon()
-		
+
+func aim():
+	animation_player.queue(current_weapon.aim_anim)
+
+func deaim():
+	animation_player.queue(current_weapon.deaim_anim)

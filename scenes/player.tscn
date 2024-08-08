@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cg0bfm6nq1jf"]
+[gd_scene load_steps=44 format=3 uid="uid://cg0bfm6nq1jf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_m5de1"]
 [ext_resource type="PackedScene" uid="uid://bhk0gxtj2fpal" path="res://models/guns/blasterN.glb" id="2_yfn1f"]
@@ -172,6 +172,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../..:fov")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
 
 [sub_resource type="Animation" id="Animation_4mk06"]
 resource_name = "blasterD OOA"
@@ -253,6 +265,122 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_o4xhv"]
+resource_name = "blasterD_aim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterD:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.038565, -0.318565, 0.56917)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterD:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [75.0, 50.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.042098, -0.273851, 1.05902)]
+}
+
+[sub_resource type="Animation" id="Animation_sepe3"]
+resource_name = "blasterD_aimshoot"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterD:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.038565, -0.318565, 0.56917), Vector3(-0.038565, -0.318565, 0.486158), Vector3(-0.038565, -0.318565, 0.56917)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterD:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 50.0]
+}
+
 [sub_resource type="Animation" id="Animation_bcl16"]
 resource_name = "blasterD deactivate"
 length = 0.5
@@ -291,6 +419,70 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qohot"]
+resource_name = "blasterD_deaim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterD:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.038565, -0.318565, 0.56917), Vector3(-0.364, -0.319, 0.569)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterD:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 75.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.362091, -0.276267, 1.09244)]
 }
 
 [sub_resource type="Animation" id="Animation_lq7tq"]
@@ -452,6 +644,10 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true]
 }
+
+[sub_resource type="Animation" id="Animation_bdw8q"]
+resource_name = "blasterI_aim"
+length = 0.3
 
 [sub_resource type="Animation" id="Animation_sa1ky"]
 resource_name = "blasterI deactivate"
@@ -664,6 +860,10 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.407214, -0.277661, 0.768459)]
 }
+
+[sub_resource type="Animation" id="Animation_05osl"]
+resource_name = "blasterK_aim"
+length = 0.2
 
 [sub_resource type="Animation" id="Animation_vfkah"]
 resource_name = "blasterK deactivate"
@@ -916,6 +1116,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [75.0, 50.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0402547, -0.209344, 0.911573)]
+}
 
 [sub_resource type="Animation" id="Animation_03g58"]
 resource_name = "blasterN deactivate"
@@ -1037,28 +1261,151 @@ tracks/2/keys = {
 "values": [true, true]
 }
 
+[sub_resource type="Animation" id="Animation_lng10"]
+resource_name = "blasterN_deaim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterN:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0403281, -0.292807, 0.504247), Vector3(-0.321, -0.293, 0.504)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterN:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 75.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.326279, -0.218846, 0.839573)]
+}
+
+[sub_resource type="Animation" id="Animation_x5iyw"]
+resource_name = "blasterN_aimshoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterN:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0403281, -0.292807, 0.504247), Vector3(-0.0403281, -0.292807, 0.397735), Vector3(-0.0403281, -0.292807, 0.504247)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterN:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.349066, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterN:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 50.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1t3h"]
 _data = {
 "RESET": SubResource("Animation_b6ewp"),
 "blasterD_OOA": SubResource("Animation_4mk06"),
 "blasterD_activate": SubResource("Animation_yefdg"),
+"blasterD_aim": SubResource("Animation_o4xhv"),
+"blasterD_aimshoot": SubResource("Animation_sepe3"),
 "blasterD_deactivate": SubResource("Animation_bcl16"),
+"blasterD_deaim": SubResource("Animation_qohot"),
 "blasterD_reload": SubResource("Animation_lq7tq"),
 "blasterD_shoot": SubResource("Animation_s74hu"),
 "blasterI_OOA": SubResource("Animation_gbc1r"),
 "blasterI_activate": SubResource("Animation_p66gr"),
+"blasterI_aim": SubResource("Animation_bdw8q"),
 "blasterI_deactivate": SubResource("Animation_sa1ky"),
 "blasterI_reload": SubResource("Animation_1wmxj"),
 "blasterI_shoot": SubResource("Animation_8kwla"),
 "blasterK_OOA": SubResource("Animation_1q3xy"),
 "blasterK_activate": SubResource("Animation_6b2uv"),
+"blasterK_aim": SubResource("Animation_05osl"),
 "blasterK_deactivate": SubResource("Animation_vfkah"),
 "blasterK_reload": SubResource("Animation_jblu3"),
 "blasterK_shoot": SubResource("Animation_k5n81"),
 "blasterN_OOA": SubResource("Animation_vhwfv"),
 "blasterN_activate": SubResource("Animation_wcdef"),
 "blasterN_aim": SubResource("Animation_uivh3"),
+"blasterN_aimshoot": SubResource("Animation_x5iyw"),
 "blasterN_deactivate": SubResource("Animation_03g58"),
+"blasterN_deaim": SubResource("Animation_lng10"),
 "blasterN_reload": SubResource("Animation_nkoy7"),
 "blasterN_shoot": SubResource("Animation_73nj8")
 }

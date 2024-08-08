@@ -11,6 +11,7 @@ deactivate_anim = "blasterK_deactivate"
 shoot_anim = "blasterK_shoot"
 reload_anim = "blasterK_reload"
 OOA_anim = "blasterK_OOA"
+aim_anim = "blasterK_aim"
 current_ammo = 6
 reserve_ammo = 6
 magazine_ammo = 12

@@ -10,6 +10,7 @@ deactivate_anim = "blasterI_deactivate"
 shoot_anim = "blasterI_shoot"
 reload_anim = "blasterI_reload"
 OOA_anim = "blasterI_OOA"
+aim_anim = "blasterI_aim"
 current_ammo = 4
 reserve_ammo = 4
 magazine_ammo = 8
