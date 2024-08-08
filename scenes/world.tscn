@@ -107,4 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.71588)
 [node name="Ammo" parent="Map" instance=ExtResource("8_hivst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76871, 0.598131, 0.829199)
 
+[node name="Ammo2" parent="Map" instance=ExtResource("8_hivst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76871, 0.598131, 3.73729)
+
 [node name="Player" parent="." instance=ExtResource("5_k4xow")]
