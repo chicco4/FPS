@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-@onready var audio_stream_player = $AudioStreamPlayer
-
 @onready var main_camera = $MainCamera
 
 var camera_rotation = Vector2(0,0)

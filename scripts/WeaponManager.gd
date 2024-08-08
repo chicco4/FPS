@@ -19,6 +19,9 @@ var collision_exclusion = []
 
 var is_aiming = false
 
+@onready var audio_stream_player = $FPSRig/AudioStreamPlayer
+
+
 func _ready():
 	current_weapon = weapon_list[weapon_index]
 	emit_signal("weapon_changed", current_weapon.weapon_name)
@@ -84,6 +87,9 @@ func shoot():
 				animation_player.play(current_weapon.aimshoot_anim)
 			else:
 				animation_player.play(current_weapon.shoot_anim)
+			
+			audio_stream_player.stream = current_weapon.shoot_sound
+			audio_stream_player.play()
 			
 			var camera_collision = get_camera_collision()
 			match current_weapon.type:

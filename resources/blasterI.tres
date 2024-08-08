@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://htobx8swnac6"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://htobx8swnac6"]
 
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_i8hux"]
+[ext_resource type="AudioStream" uid="uid://cu8k5ul5gk6vg" path="res://audios/laserLarge_000.ogg" id="2_j5ml8"]
 
 [resource]
 script = ExtResource("1_i8hux")
@@ -11,6 +12,8 @@ shoot_anim = "blasterI_shoot"
 reload_anim = "blasterI_reload"
 OOA_anim = "blasterI_OOA"
 aim_anim = "blasterI_aim"
+deaim_anim = ""
+aimshoot_anim = ""
 current_ammo = 4
 reserve_ammo = 4
 magazine_ammo = 8
@@ -19,3 +22,4 @@ weapon_range = 1000
 damage = 4
 type = 1
 projectile_velocity = 0
+shoot_sound = ExtResource("2_j5ml8")

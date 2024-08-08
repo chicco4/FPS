@@ -25,3 +25,5 @@ class_name WeaponResource
 
 @export var projectile_to_load: PackedScene
 @export var projectile_velocity: int
+
+@export var shoot_sound: AudioStream
