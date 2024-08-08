@@ -23,5 +23,5 @@ weapon_range = 1000
 damage = 5
 type = 2
 projectile_to_load = ExtResource("1_3uepn")
-projectile_velocity = 50
+projectile_velocity = 100
 shoot_sound = ExtResource("3_fik5r")
