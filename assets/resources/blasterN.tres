@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://101aufrw5vw1"]
+
+[ext_resource type="PackedScene" uid="uid://daol8g1ypy4yc" path="res://scenes/objects/bullets/bullet_big.tscn" id="1_lb02m"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_sufoh"]
+[ext_resource type="AudioStream" uid="uid://cvwecvk4n87us" path="res://assets/audios/laserLarge_003.ogg" id="3_gwok6"]
+
+[resource]
+script = ExtResource("1_sufoh")
+weapon_name = "blasterN"
+activate_anim = "blasterN/activate"
+deactivate_anim = "blasterN/deactivate"
+shoot_anim = "blasterN/shoot"
+reload_anim = "blasterN/reload"
+OOA_anim = "blasterN/OOA"
+aim_anim = "blasterN/aim"
+deaim_anim = "blasterN/deaim"
+aimshoot_anim = "blasterN/aimshoot"
+current_ammo = 10
+reserve_ammo = 10
+magazine_ammo = 10
+auto_fire = true
+weapon_range = 1000
+damage = 10
+type = 2
+projectile_to_load = ExtResource("1_lb02m")
+projectile_velocity = 100
+shoot_sound = ExtResource("3_gwok6")

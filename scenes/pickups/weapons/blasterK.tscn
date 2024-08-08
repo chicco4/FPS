@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://by1f53u7au4rx"]
 
 [ext_resource type="Script" path="res://scripts/pickup.gd" id="1_ux2j2"]
-[ext_resource type="Resource" uid="uid://qb0i3vq3huen" path="res://resources/blasterK.tres" id="2_od8gf"]
+[ext_resource type="Resource" uid="uid://qb0i3vq3huen" path="res://assets/resources/blasterK.tres" id="2_od8gf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5duh"]
 resource_name = "dark"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bvrj5vqys305u"]
 
 [ext_resource type="Script" path="res://scripts/pickup.gd" id="1_u3v8n"]
-[ext_resource type="Resource" uid="uid://dtber6y4g44jb" path="res://resources/blasterD.tres" id="2_5kl52"]
+[ext_resource type="Resource" uid="uid://dtber6y4g44jb" path="res://assets/resources/blasterD.tres" id="2_5kl52"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1t1g"]
 resource_name = "metal"

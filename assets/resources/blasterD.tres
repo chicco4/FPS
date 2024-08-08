@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dtber6y4g44jb"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_6jijl"]
+[ext_resource type="AudioStream" uid="uid://c7l45gdclts5u" path="res://assets/audios/laserSmall_004.ogg" id="2_4qi2k"]
+
+[resource]
+script = ExtResource("1_6jijl")
+weapon_name = "blasterD"
+activate_anim = "blasterD/activate"
+deactivate_anim = "blasterD/deactivate"
+shoot_anim = "blasterD/shoot"
+reload_anim = "blasterD/reload"
+OOA_anim = "blasterD/OOA"
+aim_anim = "blasterD/aim"
+deaim_anim = "blasterD/deaim"
+aimshoot_anim = "blasterD/aimshoot"
+current_ammo = 20
+reserve_ammo = 20
+magazine_ammo = 40
+auto_fire = true
+weapon_range = 1000
+damage = 2
+type = 1
+projectile_velocity = 0
+shoot_sound = ExtResource("2_4qi2k")

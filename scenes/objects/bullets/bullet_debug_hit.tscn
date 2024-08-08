@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qclyd6eydpar"]
+
+[ext_resource type="Texture2D" uid="uid://cxcd1v2ljeygf" path="res://assets/textures/crosshair/crosshair046.png" id="1_mmlol"]
+[ext_resource type="Script" path="res://scripts/bullet_debug.gd" id="2_6jt4v"]
+
+[node name="BulletDebug" type="Sprite3D"]
+billboard = 2
+texture = ExtResource("1_mmlol")
+script = ExtResource("2_6jt4v")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

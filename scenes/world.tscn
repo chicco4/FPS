@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://yc5acurmabxf"]
 
-[ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
+[ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://assets/textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
 [ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/objects/box.tscn" id="2_pxkcy"]
 [ext_resource type="PackedScene" uid="uid://df3itn26evwry" path="res://scenes/objects/static_target.tscn" id="3_lkle2"]
 [ext_resource type="PackedScene" uid="uid://dvb040wf3tgbr" path="res://scenes/pickups/weapons/blasterI.tscn" id="4_kva5f"]

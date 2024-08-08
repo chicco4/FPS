@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://2ms6ymwc0ake"]
 
-[ext_resource type="Texture2D" uid="uid://cxcd1v2ljeygf" path="res://textures/crosshair/crosshair046.png" id="1_yway7"]
-[ext_resource type="Script" path="res://scripts/bullet_debug.gd" id="2_xpplx"]
+[ext_resource type="Texture2D" uid="uid://bvj4ff1830wt5" path="res://assets/textures/crosshair/crosshair001.png" id="1_xyq4w"]
+[ext_resource type="Script" path="res://scripts/bullet_debug.gd" id="2_5r2ct"]
 
 [node name="BulletDebug" type="Sprite3D"]
+modulate = Color(0.898039, 0, 0, 1)
 billboard = 2
-texture = ExtResource("1_yway7")
-script = ExtResource("2_xpplx")
+texture = ExtResource("1_xyq4w")
+script = ExtResource("2_5r2ct")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
