@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var audio_stream_player = $AudioStreamPlayer
 
 @onready var main_camera = $MainCamera
 
@@ -51,10 +52,14 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		#if !audio_stream_player.is_playing():
+			#audio_stream_player.play()
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+		#audio_stream_player.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()	
+	move_and_slide()
+

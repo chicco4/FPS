@@ -98,23 +98,22 @@ func shoot():
 			#reload()
 
 func reload():
-	if is_aiming == true:
-		deaim()
-	if !animation_player.is_playing():
-		if current_weapon.magazine_ammo > 0 and (current_weapon.reserve_ammo - current_weapon.current_ammo) > 0:
+	if is_aiming == false:		
+		if !animation_player.is_playing():
+			if current_weapon.magazine_ammo > 0 and (current_weapon.reserve_ammo - current_weapon.current_ammo) > 0:
+				
+				if current_weapon.magazine_ammo >= (current_weapon.reserve_ammo - current_weapon.current_ammo):
+					current_weapon.magazine_ammo -= (current_weapon.reserve_ammo - current_weapon.current_ammo)
+					current_weapon.current_ammo += (current_weapon.reserve_ammo - current_weapon.current_ammo)
+				else:
+					current_weapon.current_ammo += current_weapon.magazine_ammo
+					current_weapon.magazine_ammo = 0
+				
+				emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
+				animation_player.play(current_weapon.reload_anim)
 			
-			if current_weapon.magazine_ammo >= (current_weapon.reserve_ammo - current_weapon.current_ammo):
-				current_weapon.magazine_ammo -= (current_weapon.reserve_ammo - current_weapon.current_ammo)
-				current_weapon.current_ammo += (current_weapon.reserve_ammo - current_weapon.current_ammo)
 			else:
-				current_weapon.current_ammo += current_weapon.magazine_ammo
-				current_weapon.magazine_ammo = 0
-			
-			emit_signal("update_ammo", current_weapon.current_ammo, current_weapon.magazine_ammo)
-			animation_player.play(current_weapon.reload_anim)
-		
-		else:
-			animation_player.play(current_weapon.OOA_anim)
+				animation_player.play(current_weapon.OOA_anim)
 
 func get_camera_collision() -> Vector3:
 	var camera = get_viewport().get_camera_3d()
