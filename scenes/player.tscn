@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cg0bfm6nq1jf"]
+[gd_scene load_steps=21 format=3 uid="uid://cg0bfm6nq1jf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_m5de1"]
 [ext_resource type="PackedScene" uid="uid://bhk0gxtj2fpal" path="res://models/guns/blasterN.glb" id="2_yfn1f"]
@@ -12,13 +12,80 @@
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="10_21lag"]
 [ext_resource type="PackedScene" uid="uid://bn8krpx4247tb" path="res://models/guns/blasterK.glb" id="11_v2j63"]
 [ext_resource type="AnimationLibrary" uid="uid://bcgaxwhtaqmof" path="res://animations/blasterD.res" id="12_7gwx6"]
-[ext_resource type="AnimationLibrary" uid="uid://dhfxsvb2heidu" path="res://animations/all_blasters.res" id="12_caans"]
 [ext_resource type="AnimationLibrary" uid="uid://cepfh4d5gh0x1" path="res://animations/blasterF.res" id="13_6i8e4"]
 [ext_resource type="AnimationLibrary" uid="uid://cwbx7mumf585o" path="res://animations/blasterI.res" id="14_8l8hc"]
 [ext_resource type="AnimationLibrary" uid="uid://deslqonalow80" path="res://animations/blasterK.res" id="15_7u38k"]
 [ext_resource type="AnimationLibrary" uid="uid://dturmbnh6bv4r" path="res://animations/blasterN.res" id="16_f1dke"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nh3lq"]
+
+[sub_resource type="Animation" id="Animation_auit1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterF:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.864817, -0.7, 0.936628)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterF:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.22173, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blasterF:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletPoint:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.043986, -0.190603, 1.29756)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jayc3"]
+_data = {
+"RESET": SubResource("Animation_auit1")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb1i8"]
 size = Vector3(2, 1, 2)
@@ -108,12 +175,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
 visible = false
 
 [node name="blasterF" parent="MainCamera/WeaponManager/FPSRig" instance=ExtResource("5_m88sa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, -0.864817, -0.7, 0.936628)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainCamera/WeaponManager/FPSRig"]
 libraries = {
-"": ExtResource("12_caans"),
+"": SubResource("AnimationLibrary_jayc3"),
 "blasterD": ExtResource("12_7gwx6"),
 "blasterF": ExtResource("13_6i8e4"),
 "blasterI": ExtResource("14_8l8hc"),
@@ -122,7 +188,7 @@ libraries = {
 }
 
 [node name="BulletPoint" type="Marker3D" parent="MainCamera/WeaponManager/FPSRig"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.043986, -0.190603, 1.29756)
 
 [node name="PickupDetection" type="Area3D" parent="."]
 collision_layer = 0

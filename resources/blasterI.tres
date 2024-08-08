@@ -6,14 +6,14 @@
 [resource]
 script = ExtResource("1_i8hux")
 weapon_name = "blasterI"
-activate_anim = "blasterI_activate"
-deactivate_anim = "blasterI_deactivate"
-shoot_anim = "blasterI_shoot"
-reload_anim = "blasterI_reload"
-OOA_anim = "blasterI_OOA"
-aim_anim = "blasterI_aim"
-deaim_anim = ""
-aimshoot_anim = ""
+activate_anim = "blasterI/activate"
+deactivate_anim = "blasterI/deactivate"
+shoot_anim = "blasterI/shoot"
+reload_anim = "blasterI/reload"
+OOA_anim = "blasterI/OOA"
+aim_anim = "blasterI/aim"
+deaim_anim = "blasterI/deaim"
+aimshoot_anim = "blasterI/aimshoot"
 current_ammo = 4
 reserve_ammo = 4
 magazine_ammo = 8

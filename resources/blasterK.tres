@@ -7,14 +7,14 @@
 [resource]
 script = ExtResource("1_f8ntr")
 weapon_name = "blasterK"
-activate_anim = "blasterK_activate"
-deactivate_anim = "blasterK_deactivate"
-shoot_anim = "blasterK_shoot"
-reload_anim = "blasterK_reload"
-OOA_anim = "blasterK_OOA"
-aim_anim = "blasterK_aim"
-deaim_anim = ""
-aimshoot_anim = ""
+activate_anim = "blasterK/activate"
+deactivate_anim = "blasterK/deactivate"
+shoot_anim = "blasterK/shoot"
+reload_anim = "blasterK/reload"
+OOA_anim = "blasterK/OOA"
+aim_anim = "blasterK/aim"
+deaim_anim = "blasterK/deaim"
+aimshoot_anim = "blasterK/aimshoot"
 current_ammo = 6
 reserve_ammo = 6
 magazine_ammo = 12

@@ -6,14 +6,14 @@
 [resource]
 script = ExtResource("1_6jijl")
 weapon_name = "blasterD"
-activate_anim = "blasterD_activate"
-deactivate_anim = "blasterD_deactivate"
-shoot_anim = "blasterD_shoot"
-reload_anim = "blasterD_reload"
-OOA_anim = "blasterD_OOA"
-aim_anim = "blasterD_aim"
-deaim_anim = "blasterD_deaim"
-aimshoot_anim = "blasterD_aimshoot"
+activate_anim = "blasterD/activate"
+deactivate_anim = "blasterD/deactivate"
+shoot_anim = "blasterD/shoot"
+reload_anim = "blasterD/reload"
+OOA_anim = "blasterD/OOA"
+aim_anim = "blasterD/aim"
+deaim_anim = "blasterD/deaim"
+aimshoot_anim = "blasterD/aimshoot"
 current_ammo = 20
 reserve_ammo = 20
 magazine_ammo = 40
