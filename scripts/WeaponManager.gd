@@ -91,7 +91,8 @@ func shoot():
 			audio_stream_player.stream = current_weapon.shoot_sound
 			audio_stream_player.play()
 			
-			var camera_collision = get_camera_collision()
+			# mi serve tante diverse camera_collision se voglio fare uno shotgun e poi spararne tipo 5 assieme
+			var camera_collision = get_camera_collision() 
 			match current_weapon.type:
 				NULL:
 					print("weapon type not chosen")
