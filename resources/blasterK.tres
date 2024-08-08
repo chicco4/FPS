@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6loc034ex6uk" path="res://scenes/bullet_simple.tscn" id="1_3uepn"]
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_f8ntr"]
-[ext_resource type="AudioStream" uid="uid://cns2bujxpvbxr" path="res://audios/laserRetro_004.ogg" id="3_fik5r"]
+[ext_resource type="AudioStream" uid="uid://qlau0v0danbi" path="res://audios/impactMetal_002.ogg" id="3_h1kix"]
 
 [resource]
 script = ExtResource("1_f8ntr")
@@ -24,4 +24,4 @@ damage = 5
 type = 2
 projectile_to_load = ExtResource("1_3uepn")
 projectile_velocity = 100
-shoot_sound = ExtResource("3_fik5r")
+shoot_sound = ExtResource("3_h1kix")
