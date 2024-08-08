@@ -1,6 +1,6 @@
 # FPS
 
-# to do
+## to do
 - inheritence for targets and pickups
 - moving targets
 
