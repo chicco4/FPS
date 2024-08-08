@@ -48,6 +48,7 @@ environment = SubResource("Environment_6b8f3")
 
 [node name="Floor" type="StaticBody3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Floor"]
 material_override = SubResource("StandardMaterial3D_d13s1")
@@ -85,6 +86,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 3.13783, -1.24822)
 
 [node name="StaticTarget6" parent="Map/StaticTargets" instance=ExtResource("3_lkle2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.67218, 2.06612, -1.24822)
+
+[node name="MovingTargets" type="Node3D" parent="Map"]
 
 [node name="Weapons" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.493999, 2)

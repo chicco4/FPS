@@ -55,14 +55,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("blasterD:position")
+tracks/3/path = NodePath("blasterD:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.7, 0)]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -79,14 +79,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("blasterD:visible")
+tracks/5/path = NodePath("blasterD:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, -0.7, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -191,14 +191,14 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.452247), Vector3(-0.364118, -0.318565, 0.56917)]
+"values": [true, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -215,14 +215,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.452247), Vector3(-0.364118, -0.318565, 0.56917)]
 }
 
 [sub_resource type="Animation" id="Animation_yefdg"]
@@ -231,14 +231,14 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, -0.7, 0), Vector3(-0.364118, -0.318565, 0.56917)]
+"values": [false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -255,14 +255,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Vector3(0, -0.7, 0), Vector3(-0.364118, -0.318565, 0.56917)]
 }
 
 [sub_resource type="Animation" id="Animation_o4xhv"]
@@ -271,14 +271,14 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.038565, -0.318565, 0.56917)]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -295,14 +295,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.038565, -0.318565, 0.85949)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -326,7 +326,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.042098, -0.273851, 1.05902)]
+"values": [Vector3(-0.042098, -0.273851, 1.40912)]
 }
 
 [sub_resource type="Animation" id="Animation_sepe3"]
@@ -342,7 +342,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.025, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.038565, -0.318565, 0.56917), Vector3(-0.038565, -0.318565, 0.486158), Vector3(-0.038565, -0.318565, 0.56917)]
+"values": [Vector3(-0.039, -0.319, 0.859), Vector3(-0.038565, -0.318565, 0.486158), Vector3(-0.039, -0.319, 0.859)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -365,7 +365,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, true]
 }
 tracks/3/type = "value"
@@ -387,14 +387,14 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(0, -0.7, 0)]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -411,14 +411,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(0, -0.7, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qohot"]
@@ -427,14 +427,14 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.038565, -0.318565, 0.56917), Vector3(-0.364, -0.319, 0.569)]
+"values": [true, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -451,14 +451,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [Vector3(-0.039, -0.319, 0.859), Vector3(-0.364, -0.319, 0.569)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -491,14 +491,14 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.308381, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.56917)]
+"values": [true, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -515,14 +515,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.308381, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.56917)]
 }
 
 [sub_resource type="Animation" id="Animation_s74hu"]
@@ -531,14 +531,14 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("blasterD:position")
+tracks/0/path = NodePath("blasterD:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.499653), Vector3(-0.364118, -0.318565, 0.56917)]
+"values": [true, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -555,14 +555,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("blasterD:visible")
+tracks/2/path = NodePath("blasterD:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.364118, -0.318565, 0.56917), Vector3(-0.364118, -0.318565, 0.499653), Vector3(-0.364118, -0.318565, 0.56917)]
 }
 
 [sub_resource type="Animation" id="Animation_gbc1r"]
