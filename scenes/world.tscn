@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://yc5acurmabxf"]
 
 [ext_resource type="Texture2D" uid="uid://8xt6lolj5nxv" path="res://textures/prototype_textures/Dark/texture_05.png" id="1_0nyue"]
-[ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/box.tscn" id="2_pxkcy"]
-[ext_resource type="PackedScene" uid="uid://df3itn26evwry" path="res://scenes/static_target.tscn" id="3_lkle2"]
-[ext_resource type="PackedScene" uid="uid://dvb040wf3tgbr" path="res://scenes/weapons/blasterI.tscn" id="4_kva5f"]
+[ext_resource type="PackedScene" uid="uid://daev73ru0k3fg" path="res://scenes/objects/box.tscn" id="2_pxkcy"]
+[ext_resource type="PackedScene" uid="uid://df3itn26evwry" path="res://scenes/objects/static_target.tscn" id="3_lkle2"]
+[ext_resource type="PackedScene" uid="uid://dvb040wf3tgbr" path="res://scenes/pickups/weapons/blasterI.tscn" id="4_kva5f"]
 [ext_resource type="PackedScene" uid="uid://cg0bfm6nq1jf" path="res://scenes/player.tscn" id="5_k4xow"]
-[ext_resource type="PackedScene" uid="uid://bvrj5vqys305u" path="res://scenes/weapons/blasterD.tscn" id="5_lfmh8"]
-[ext_resource type="PackedScene" uid="uid://by1f53u7au4rx" path="res://scenes/weapons/blasterK.tscn" id="6_xdegh"]
-[ext_resource type="PackedScene" uid="uid://k7guv6ws6yei" path="res://scenes/weapons/blasterN.tscn" id="7_tw26t"]
-[ext_resource type="PackedScene" uid="uid://cw6xyi5yt2qil" path="res://scenes/ammo.tscn" id="8_hivst"]
+[ext_resource type="PackedScene" uid="uid://bvrj5vqys305u" path="res://scenes/pickups/weapons/blasterD.tscn" id="5_lfmh8"]
+[ext_resource type="PackedScene" uid="uid://by1f53u7au4rx" path="res://scenes/pickups/weapons/blasterK.tscn" id="6_xdegh"]
+[ext_resource type="PackedScene" uid="uid://k7guv6ws6yei" path="res://scenes/pickups/weapons/blasterN.tscn" id="7_tw26t"]
+[ext_resource type="PackedScene" uid="uid://cw6xyi5yt2qil" path="res://scenes/pickups/ammo.tscn" id="8_hivst"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hrlc6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

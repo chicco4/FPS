@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://k4ypv6qkdvq6"]
 
-[ext_resource type="PackedScene" uid="uid://c6loc034ex6uk" path="res://scenes/bullet_simple.tscn" id="1_br0uh"]
+[ext_resource type="PackedScene" uid="uid://c6loc034ex6uk" path="res://scenes/objects/bullets/bullet_simple.tscn" id="1_br0uh"]
 [ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="2_uwmr7"]
 [ext_resource type="AudioStream" uid="uid://dk3g832kqrkbo" path="res://audios/impactMetal_003.ogg" id="3_vy1ve"]
 

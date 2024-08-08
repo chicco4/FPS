@@ -14,7 +14,7 @@ var weapon_index = 0
 
 enum {NULL, HITSCAN, PROJECTILE}
 
-var bullet_debug = preload("res://scenes/bullet_debug.tscn")
+var bullet_debug = preload("res://scenes/objects/bullets/bullet_debug.tscn")
 var collision_exclusion = []
 
 var is_aiming = false
@@ -204,7 +204,7 @@ func _on_pickup_detection_body_entered(body):
 func drop():
 	if weapon_list.size() > 1:
 		
-		var weapon_scene = load("res://scenes/weapons/" + current_weapon.weapon_name + ".tscn")
+		var weapon_scene = load("res://scenes/pickups/weapons/" + current_weapon.weapon_name + ".tscn")
 		var weapon_instance = weapon_scene.instantiate()
 		weapon_instance.weapon_resource = current_weapon
 		weapon_instance.set_global_transform(bullet_point.get_global_transform())
