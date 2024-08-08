@@ -16,14 +16,16 @@ func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _input(event):
+func _input(event):	
 	if event is InputEventMouseMotion:
 		var mouse_event = event.relative * mouse_sensitivity
 		camera_look(mouse_event)
-
-func _process(_delta):
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+	
+	if event.is_action_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			get_tree().quit()
 
 func camera_look(movement: Vector2):
 	camera_rotation += movement
